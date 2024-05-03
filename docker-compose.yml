@@ -11,7 +11,7 @@ services:
       monitoring-tracing:
     command: | # only use config directory, but therefore we need to give a empty config file
       --config-directory /etc/telegraf/telegraf.d/
-      --config /dev/null
+      # --config /dev/null
     volumes:
       # host and docker metrics and Prometheus output settings 
       - ./config/telegraf:/etc/telegraf/telegraf.d
