@@ -33,7 +33,7 @@ services:
     labels:
       # make the Prometheus output publicly available so that Prometheus server can scrape this endpoint
       - "traefik.enable=true"
-      - "traefik.http.routers.telegraf.entrypoints=https"
+      - "traefik.http.routers.telegraf.entrypoints=websecure"
       - "traefik.http.routers.telegraf.rule=Host(`${TELEMETRY_SERVE_DOMAIN:-telemetry.owncloud.test}`)"
       - "traefik.http.routers.telegraf.tls.certresolver=${CERTRESOLVER:-http}"
       - "traefik.http.routers.telegraf.service=telegraf"
